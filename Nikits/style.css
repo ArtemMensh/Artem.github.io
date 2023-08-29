@@ -356,3 +356,8 @@ li {
     cursor: pointer;
     text-align: center;
 }
+
+/* Стиль кнопки при нажатии */
+.buyBTC:active {
+    background-color: #d0d0d0;
+}
