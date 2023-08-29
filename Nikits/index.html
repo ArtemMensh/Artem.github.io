@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница оплаты</title>
+    <link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+<div class="payment-form">
+
+    <div class="header"><img src="images/Logo.png" class="logo">
+        <div class="loader-container">
+            <img src="images/icons8-iphone_spinner 1.png" class="loader">
+            <span id="process_text" class="await">Awaiting...</span>
+        </div>
+    </div>
+    <div id="form_step_1" style="display: block">
+
+        <form action="/process_payment" method="post" onsubmit="return validateForm()">
+            <div class="field">
+                <div class="input-field">
+                    <img src="images/Icon_user.png" class="input-icon">
+                    <input type="text" id="name" name="name" placeholder="Name" required>
+                    <span class="clear-icon" onclick="clearField('name')"></span>
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="input-field">
+                    <img src="images/Icon_mail.svg" class="input-icon">
+                    <input type="email" id="email" name="email" placeholder="Mail" required>
+                    <span class="clear-icon" onclick="clearField('email')"></span>
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="input-field">
+                    <img src="images/Icon_phone.svg" class="input-icon">
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone" required>
+                    <span class="clear-icon" onclick="clearField('phone')"></span>
+                </div>
+            </div>
+
+            <input type="submit" class="buy" value="Pay">
+        </form>
+
+        <div class="parentTab">
+            <div class="tabs">
+                <div class="tab active" onclick="openTab('test1')"><img style="padding-right: 4px;"
+                                                                        src="images/Logo%20Bitcoin.com.png">Bitcoin.com
+                </div>
+                <div class="tab" onclick="openTab('test2')"><img style="padding-right: 4px;"
+                                                                 src="images/Logo%20moonPay.png">MoonPay
+                </div>
+                <div class="tab" onclick="openTab('test3')"><img style="padding-right: 4px;"
+                                                                 src="images/Logo%20conbase.png">coinbase
+                </div>
+                <div class="tab" onclick="openTab('test4')"><img style="padding-right: 4px;"
+                                                                 src="images/Binance.png"><span
+                        style="color: #F3BA2F; text-transform: uppercase;"> Binance</span></div>
+            </div>
+
+            <div class="tab-content active" id="test1-content">
+                <span class="headerDescription">How to buy Bitcoin on Bitcoin.com</span>
+                <ul>
+                    <li class="textDescription">Download the Bitcoin.com Wallet app</li>
+                    <li class="textDescription">Set up a payment method (credit/debit card, Apple Pay, etc.)</li>
+                    <li class="textDescription">Follow the purchase instructions.</li>
+                </ul>
+                <div class="button_parent">
+                        <button class="buyBTC">Buy BTC</button>
+                </div>
+            </div>
+
+            <div class="tab-content" id="test2-content">
+                <span class="headerDescription">How to buy Bitcoin on MoonPay </span>
+                <ul>
+                    <li class="textDescription">Download the MoonPay.com Wallet app</li>
+                    <li class="textDescription">Set up a payment method (credit/debit card, Apple Pay, etc.)</li>
+                    <li class="textDescription">Follow the purchase instructions.</li>
+                </ul>
+                <div class="button_parent">
+                    <button class="buyBTC">Buy BTC</button>
+                </div>
+            </div>
+
+            <div class="tab-content" id="test3-content">
+                <span class="headerDescription">How to buy Bitcoin on coinbase </span>
+                <ul>
+                    <li class="textDescription">Download the coinbase.com Wallet app</li>
+                    <li class="textDescription">Set up a payment method (credit/debit card, Apple Pay, etc.)</li>
+                    <li class="textDescription">Follow the purchase instructions.</li>
+                </ul>
+                <div class="button_parent">
+                    <button class="buyBTC"> Buy BTC</button>
+                </div>
+            </div>
+
+            <div class="tab-content" id="test4-content">
+                <span class="headerDescription">How to buy Bitcoin on Binance </span>
+                <ul>
+                    <li class="textDescription">Download the Binance.com Wallet app</li>
+                    <li class="textDescription">Set up a payment method (credit/debit card, Apple Pay, etc.)</li>
+                    <li class="textDescription">Follow the purchase instructions.</li>
+                </ul>
+                <div class="button_parent">
+                    <button class="buyBTC"> Buy BTC</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="form_step_2" style="display: none">
+        <div class="payNumber">
+            <div id="number">#45621</div>
+            <div class="containerValue">
+                <div class="value">0.00184182 BTC</div>
+                <div class="exchange_rate">1 BTC = $26,061.30</div>
+            </div>
+        </div>
+        <div class="containerQR">
+            <div class="tabs">
+                <div class="tab active" onclick="openTab('qr')"><img style="padding-right: 4px;"
+                                                                     src="images/qr-mini.png">Scan</div>
+                <div class="tab" onclick="openTab('copy')"><img style="padding-right: 4px;"
+                                                                src="images/copy.png">Copy</div>
+            </div>
+            <div class="tab-content active" id="qr-content">
+                <div id="parent-image">
+                    <img src="images/QR.png">
+                </div>
+                <div style="padding: 20px">
+                    <input type="submit" class="buy" value="Open in wallet"></div>
+                <div class="recommended">
+                    Recommended fee: 13.722 sat/byte
+                </div>
+            </div>
+            <div class="tab-content" id="copy-content">
+                <div class="copy-complete">
+                    To complete your payment, please send <span class="bold">0.00184182 BTC</span> to the address below.
+                </div>
+                <span class="inputName">Address</span>
+                <div class="field">
+                    <div class="input-field">
+                        <img src="images/Logo_BTC.png" class="bitcoin">
+                        <img src="images/split.png" class="separator">
+                        <input type="text" id="address" name="address" placeholder="Address">
+                        <span class="clear-icon copy_white"></span>
+                    </div>
+                </div>
+                <span class="inputName">Payment link</span>
+                <div class="field">
+                    <div class="input-field">
+                        <img src="images/Logo_BTC.png" class="bitcoin">
+                        <img src="images/split.png" class="separator">
+                        <input type="text" id="Payment_link" name="Payment_link" placeholder="Payment link">
+                        <span class="clear-icon copy_white"></span>
+                    </div>
+                </div>
+                <div class="recommended">
+                    Recommended fee: 13.722 sat/byte
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function validateForm() {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+
+        if (name === "" || email === "" || phone === "") {
+            alert("Пожалуйста, заполните все поля.");
+            return false;
+        }
+
+        if (!isValidEmail(email)) {
+            alert("Пожалуйста, введите корректный адрес электронной почты.");
+            return false;
+        }
+
+        if (!isValidPhone(phone)) {
+            alert("Пожалуйста, введите корректный номер телефона.");
+            return false;
+        }
+
+        return true;
+    }
+
+    function clearField(fieldId) {
+        const field = document.getElementById(fieldId);
+        field.value = "";
+    }
+
+    function isValidEmail(email) {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailPattern.test(email);
+    }
+
+    function isValidPhone(phone) {
+        const phonePattern = /^\d{10}$/;
+        return phonePattern.test(phone);
+    }
+
+    function openTab(tabName) {
+        const tabContents = document.querySelectorAll('.tab-content');
+        for (const content of tabContents) {
+            content.classList.remove('active');
+        }
+
+        const selectedContent = document.getElementById(`${tabName}-content`);
+        selectedContent.classList.add('active');
+
+        const tabs = document.querySelectorAll('.tab');
+        for (const tab of tabs) {
+            tab.classList.remove('active');
+        }
+
+        const selectedTab = document.querySelector(`[onclick="openTab('${tabName}')"]`);
+        selectedTab.classList.add('active');
+    }
+</script>
+</body>
+</html>

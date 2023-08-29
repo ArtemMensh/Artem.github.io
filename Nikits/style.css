@@ -1,0 +1,356 @@
+@font-face {
+    font-family: 'Inter'; /* Имя для использования в дальнейшем */
+    src: url('Inter/Inter-Black.otf') format('otf')
+    /* Дополнительные параметры шрифта, такие как font-weight и font-style, могут быть добавлены здесь */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f7f7f7;
+    position: relative;
+}
+
+.payment-form {
+    background-color: #F5F5F5;
+    border-radius: 8px;
+    padding: 20px 20px 0px 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 420px;
+    position: relative;
+}
+
+.loader {
+    width: 24px;
+    height: 24px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.field label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.field input {
+    height: 32px;
+    /*padding: 8px;*/
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.tab {
+    padding: 10px;
+    /*border: 1px solid #ccc;*/
+    cursor: pointer;
+    background-color: #f2f2f2;
+    flex: 1;
+    text-align: center;
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: inherit;
+    letter-spacing: -0.22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 410px) {
+    .tab {
+        font-size: 9px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .tab > img {
+        display: none;
+    }
+}
+
+.tab.active {
+    background-color: #fff;
+}
+
+.tab-content {
+    padding: 20px;
+    display: none;
+
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.field {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.input-field {
+    flex: 1;
+    position: relative;
+    width: 100%;
+}
+
+.input-field input {
+    width: 100%;
+    text-indent: 34px;
+    height: 42px;
+    /*padding-right: 30px;*/
+}
+
+
+
+.clear-icon {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background-image: url("images/Icon_close.png");
+    cursor: pointer;
+}
+.copy_white{
+    background-image: url("images/copy_white.png");
+    width: 16px;
+    height: 16px;
+}
+.logo {
+    width: 126px;
+    height: 38px;
+}
+
+.await {
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 700;
+    margin-left: 10px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.loader-container {
+    display: flex;
+    align-items: center; /* Выравнивание по вертикали */
+}
+
+.input-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 14px;
+}
+
+.bitcoin{
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+.separator {
+    position: absolute;
+    left: 31px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 20px;
+}
+
+.buy {
+    display: flex;
+    width: 100%;
+    padding: 16px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 12px;
+    background: #202020;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.parentTab {
+    margin: 0px -20px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.headerDescription {
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.textDescription {
+    margin-left: -29px;
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+ul {
+    margin-top: 10px;
+}
+
+li {
+    padding-bottom: 8px;
+}
+
+.payNumber {
+    margin-top: 13px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background-color: white;
+    padding: 20px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#number {
+    color: #202020;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.value {
+    color: #000;
+    text-align: right;
+    font-family: 'Inter', sans-serif;
+    font-size: 12.284px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: -0.246px;
+}
+
+.exchange_rate {
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+#parent-image {
+    display: flex;
+    justify-content: center;
+}
+
+.containerQR {
+    background-color: white;
+    margin: 0px -20px;
+    border-radius: 8px 8px;
+    min-height: 412px;
+}
+
+.recommended {
+    display: flex;
+    width: 100%;
+    padding: 0px 0px 20px;
+    justify-content: center;
+    align-items: center;
+    color: #808080;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.copy-complete {
+    margin: 23px 60px 0px;
+    color: #808080;
+    text-align: center;
+    /* Body_14 */
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 19.6px */
+    letter-spacing: -0.28px;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.inputName {
+    margin-left: 12px;
+    color: #808080;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.button_parent {
+    display: flex;
+    justify-content: center;
+}
+
+.buyBTC{
+    width: 180px;
+    padding: 10px 0px;
+    background-color: white;
+    border-radius: 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    cursor: pointer;
+}
